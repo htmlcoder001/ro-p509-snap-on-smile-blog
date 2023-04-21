@@ -97,277 +97,145 @@ a:visited,
                 -webkit-filter: blur(10px);
             }
         </style>
-        
+    
         <!-- Header -->
+        <link href="https://fonts.googleapis.com/css?family=Montserrat&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
         <style>
             .webt-header {
-                margin-bottom: 32px;
+            
             }
-            .webt-wrapper {
-                max-width: 1250px;
-                margin: 0 auto;
-            }
-    
             .webt-header__top {
-                height: 51px;
-                border-bottom: 1px solid #eee;
-                background-color: #fff;
-                box-shadow: 1px -8px 11px -11px rgba(0, 0, 0, 0.35) inset;
-            }
-            .webt-header__top .webt-wrapper {
                 width: 100%;
+                height: 37px;
+                position: relative;
+                border-bottom: 1px solid #111111;
+            }
+            .webt-top__wrapper {
                 display: flex;
-                align-items: center;
                 justify-content: space-between;
+                margin: 0 auto;
+                width: 100%;
+                max-width: 1080px;
                 height: 100%;
+                align-items: center;
                 position: relative;
             }
-            .webt-top__date {
-                font-size: 11px;
-                font-weight: bold;
-                color: #435762;
-                font-family: Georgia, "Times New Roman", Times, serif!important;
-            }
-            .webt-top__logo {
-                display: block;
-                height: 30px;
-                width: 170px;
-    
-                position: absolute;
-                left: 50%;
-                top: calc(50% - 5px);
-    
-                -webkit-transform: translate(-50%, -50%);
-                -moz-transform: translate(-50%, -50%);
-                -ms-transform: translate(-50%, -50%);
-                -o-transform: translate(-50%, -50%);
-                transform: translate(-50%, -50%);
-            }
-            .webt-logo__img {
-                max-width: 100%;
-                object-fit: contain;
-            }
-            .webt-top__search {
-                display: flex;
-                align-items: center;
-                justify-content: flex-end;
-            }
-            .webt-search__input {
-                width: 250px;
-                height: 30px;
-                outline-width: 0;
-                font-size: 14px;
-                padding: 5px;
-                border: 1px solid #ddd;
-                font-family: Georgia, "Times New Roman", Times, serif!important;
-            }
-            .webt-search__button {
-                margin-left: 10px;
-                cursor: pointer;
-            }
-            .webt-search__icon {
-            }
-    
-            .webt-header__menu {
-            }
-            .webt-header__menu .webt-wrapper {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                height: 50px;
-            }
-            .webt-menu__nav {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                max-width: calc(100% - 96px);
-                width: 100%;
-            }
-            .webt-nav__link,
-            .webt-nav__link:focus,
-            .webt-nav__link:active {
-                font-family: Georgia, "Times New Roman", Times, serif!important;
-                font-size: 16px;
-                color: #312f2f;
+            .webt-top__menu {
+                display: none;
+            
                 text-decoration: none;
+                -webkit-transition: all .3s;
+                -moz-transition: all .3s;
+                -ms-transition: all .3s;
+                -o-transition: all .3s;
+                transition: all .3s;
             }
-            .webt-nav__link:hover {
-                color: rgba(179,138,3,0.95);
+            .webt-top__menu:hover {
+                text-decoration: none;
+                opacity: 0.8;
             }
-            .--link-active,
-            .--link-active:hover {
-                color: rgba(231,99,40,0.95);
+            .webt-top__actions {
+                display: block;
+                height: 100%;
+                width: 120px;
+                background-image: url(images/header-actions.png);
+                background-position: center;
+                background-repeat: no-repeat;
+                -webkit-background-size: contain;
+                background-size: contain;
+            }
+            .webt-header__logo {
+                max-width: 455px;
+                width: 100%;
+                display: block;
+                margin: 30px auto;
+            }
+            .webt-top__nav {
+                height: 100%;
+                display: flex;
+                gap: 40px;
+                align-items: center;
+                justify-content: flex-start;
+            }
+            .webt-top__link,
+            .webt-top__link:focus,
+            .webt-top__link:active {
+                font: 10px Montserrat!important;
+                color: #000000;
+                text-decoration: none;
+                text-transform: uppercase;
+                letter-spacing: 1.5px;
+                position: relative;
+            }
+            .--link-arrow {
+            
             }
             .--link-arrow:after {
+                width: 20px;
+                height: 20px;
                 content: '';
-                border: solid #5a5b64;
-                border-width: 0 2px 2px 0;
-                display: inline-block;
-                padding: 3px;
-                transform: rotate(45deg);
-                -webkit-transform: rotate(45deg);
-                margin-left: 5px;
-                margin-bottom: 2px;
+                display: block;
+                position: absolute;
+                right: -21px;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -moz-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                -o-transform: translateY(-50%);
+                transform: translateY(-50%);
+                background-image: url(images/icon-arrow.png);
+                background-repeat: no-repeat;
+                background-position: center;
+                -webkit-background-size: contain;
+                background-size: contain;
             }
-            .webt-menu__toggle {
+            .webt-top__link:hover {
+                color: #999999;
             }
-            .webt-menu__icon {
-            }
-    
-            .webt-header__hot {
-                border-bottom: 1px solid #DFDFDF;
-                width: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: stretch;
-                height: 41px;
-                background-color: rgba(231,99,40,0.05);
-                border-top: 2px solid #E76328;
-            }
-            .webt-hot__item,
-            .webt-hot__item:active,
-            .webt-hot__item:focus {
-                padding: 0 16px;
-                font-family: sans-serif!important;
-                text-decoration: none;
-                color: #111!important;
-                font-size: 14px;
-                font-weight: normal!important;
-                white-space: nowrap;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                border-right: 1px solid #DFDFDF;
-            }
-            .webt-hot__item:first-child {
-                font-weight: bold!important;
-                color: #000000!important;
-                background-color: #FFFF00;
-            }
-            .webt-hot__item:last-child {
-                border-right: none;
-            }
-            .webt-hot__item:hover {
-            }
-            
-            .webt-header__bottom {
-                height: 44px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                text-align: center;
-                width: 100%;
-                border-bottom: 2px solid #4d4d4d;
-                max-width: 1250px;
-                margin: 20px auto 0 auto;
-                padding-bottom: 10px;
-            }
-            .webt-bottom__title {
-                font-family: Georgia, "Times New Roman", Times, serif!important;
-                color: #111;
-                font-size: 24px;
-                text-align: center;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                margin-bottom: 0;
-            }
-            
-            .--only-mobile {
-                display: none;
-            }
-
-            @media (max-width: 1250px) {
-                .webt-wrapper {
+        
+        
+            @media (max-width: 1080px) {
+                .webt-header__top {
                     padding-left: 12px;
                     padding-right: 12px;
                 }
             }
-            @media (max-width: 1180px) {
-                .webt-header__menu,
-                .webt-search__input,
-                .webt-top__date {
-                    display: none;
-                }
-                .--only-mobile {
-                    display: block;
-                }
+            @media (max-width: 960px) {
+            
             }
             @media (max-width: 768px) {
-                .webt-header__bottom {
-                    height: 32px;
-                    margin-top: 10px;
+                .webt-top__menu {
+                    display: block;
                 }
-                .webt-bottom__title {
-                    font-size: 21px;
+                .webt-top__wrapper {
+                    justify-content: space-between;
                 }
-                .webt-header__hot {
-                    white-space: nowrap;
-                    flex-wrap: nowrap;
-                    overflow-x: scroll;
-                    justify-content: flex-start;
+                .webt-top__nav {
+                    display: none;
                 }
-                .webt-top__logo {
-                    width: 150px;
-                    top: 50%;
+                .webt-header__logo {
+                    max-width: 300px;
                 }
             }
         </style>
         <header class="webt-header">
             <div class="webt-header__top">
-                <div class="webt-wrapper">
-                    <div class="webt-top__date">
-                        <script type="text/javascript">
-                            d = new Date(); p = new Date(d.getTime());
-                            monthA =  '01,02,03,04,05,06,07,08,09,10,11,12'.split(',');
-                            var w = p.getDate();
-                            document.write(p.getDate() + '.' + monthA[p.getMonth()] +'.'+ p.getFullYear());
-                        </script>
-                    </div>
-                    <a href="#roulette" class="webt-top__logo">
-                        <img src="images/logo.svg" alt="Adevărul" width="320" height="50" class="webt-logo__img">
+                <div class="webt-top__wrapper">
+                    <a href="#roulette" class="webt-top__menu">
+                        <svg class="ButtonIcon-iVrqPc hVlDJB button-icon icon icon-menu" focusable="false" viewBox="0 0 32 32" width="32" height="32" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M8 10h16v2H8v-2zm0 5h16v2H8v-2zm0 5h16v2H8v-2z" fill-rule="evenodd"></path></svg>
                     </a>
-                    <div class="webt-top__search">
-                        <input type="text" class="webt-search__input" placeholder="Caută în adevarul.ro">
-                        <a href="#roulette" class="webt-search__button">
-                            <img src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-search'%3e%3ccircle cx='11' cy='11' r='8'%3e%3c/circle%3e%3cline x1='21' y1='21' x2='16.65' y2='16.65'%3e%3c/line%3e%3c/svg%3e" alt="search" width="24" height="24" class="webt-search__icon">
-                        </a>
-                    </div>
-                    <a href="#roulette" class="webt-menu__toggle --only-mobile">
-                        <img class="webt-menu__icon" src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-menu'%3e%3cline x1='3' y1='12' x2='21' y2='12'%3e%3c/line%3e%3cline x1='3' y1='6' x2='21' y2='6'%3e%3c/line%3e%3cline x1='3' y1='18' x2='21' y2='18'%3e%3c/line%3e%3c/svg%3e" alt="menu" width="24" height="24">
-                    </a>
-                </div>
-            </div>
-            <div class="webt-header__menu">
-                <div class="webt-wrapper">
-                    <nav class="webt-menu__nav">
-                        <a href="#roulette" class="webt-nav__link">Home</a>
-                        <a href="#roulette" class="webt-nav__link --link-arrow">Știri interne</a>
-                        <a href="#roulette" class="webt-nav__link --link-arrow">Știri locale</a>
-                        <a href="#roulette" class="webt-nav__link --link-arrow">Știri externe</a>
-                        <a href="#roulette" class="webt-nav__link">Politică</a>
-                        <a href="#roulette" class="webt-nav__link">Economie</a>
-                        <a href="#roulette" class="webt-nav__link">Sport</a>
-                        <a href="#roulette" class="webt-nav__link --link-active --link-arrow">Stil de viață</a>
-                        <a href="#roulette" class="webt-nav__link --link-arrow">Showbiz</a>
-                        <a href="#roulette" class="webt-nav__link">Opinii</a>
-                        <a href="#roulette" class="webt-nav__link">Cele mai citite 🔥</a>
-                        <a href="#roulette" class="webt-nav__link">Adevărul în 60 de secunde</a>
+                    <nav class="webt-top__nav">
+                        <a href="#roulette" class="webt-top__link">HOUSE</a>
+                        <a href="#roulette" class="webt-top__link">WRITE</a>
+                        <a href="#roulette" class="webt-top__link">CONTACTS</a>
+                        <a href="#roulette" class="webt-top__link --link-arrow">CATEGORIES</a>
+                        <a href="#roulette" class="webt-top__link">DISCOUNTS</a>
+                        <a href="#roulette" class="webt-top__link">MY E-BOOK</a>
                     </nav>
-                    <a href="#roulette" class="webt-menu__toggle">
-                        <img class="webt-menu__icon" src="data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%23111' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' class='feather feather-menu'%3e%3cline x1='3' y1='12' x2='21' y2='12'%3e%3c/line%3e%3cline x1='3' y1='6' x2='21' y2='6'%3e%3c/line%3e%3cline x1='3' y1='18' x2='21' y2='18'%3e%3c/line%3e%3c/svg%3e" alt="menu" width="24" height="24">
-                    </a>
+                    <a href="#roulette" class="webt-top__actions"></a>
                 </div>
             </div>
-            <div class="webt-header__hot">
-                <a href="#roulette" class="webt-hot__item">Ultimele știri ⏱</a>
-                <a href="#roulette" class="webt-hot__item">Război în Ucraina</a>
-                <a href="#roulette" class="webt-hot__item">Istoria zilei</a>
-            </div>
-            <div class="webt-header__bottom">
-                <h3 class="webt-bottom__title">Viață sănătoasă</h3>
-            </div>
+            <img src="images/header-logo.jpg" alt="" class="webt-header__logo">
         </header>
         <!-- // Header -->
         
